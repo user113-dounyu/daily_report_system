@@ -1,7 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page import="constants.ForwardConst" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<c:set var="action" value="${ForwardConst.ACT_MEMO.getValue()}" />
+<c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
+<c:set var="commCrt" value="${ForwardConst.CMD_CREATE.getValue()}" />
+
+
+<c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
+<c:set var="commCrt" value="${ForwardConst.CMD_CREATE.getValue()}" />
+
+<c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
+<c:set var="commShow" value="${ForwardConst.CMD_SHOW.getValue()}" />
+<c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
 
 <c:set var="actTop" value="${ForwardConst.ACT_TOP.getValue()}" />
 <c:set var="actTop2" value="${ForwardConst.ACT_TOP2.getValue()}" />
@@ -9,34 +21,27 @@
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="actMemo" value="${ForwardConst.ACT_MEMO.getValue()}" />
 
-<c:set var="commShow" value="${ForwardConst.CMD_SHOW.getValue()}" />
-<c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
-<c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
-
-<c:import url="../layout/app.jsp">
+<c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
-        <c:if test="${flush != null}">
-            <div id="flush_success">
-                <c:out value="${flush}"></c:out>
-            </div>
-        </c:if>
-        <h2>らくらく日報くんへようこそ</h2>
+        <h2>メモ　新規登録ページ</h2>
 
 
-
-        <h3>【今日の目標になるはず＿一旦目標一覧】</h3>
+        <h3>【今日の目標になるはず】</h3>
         <table id="report_list">
             <tbody>
                 <tr>
+                    <th class="report_name">氏名</th>
                     <th class="report_date">日付</th>
-                    <th class="report_goal">目標</th>
+                    <th class="report_title">タイトル</th>
+                    <th class="report_action">操作</th>
                 </tr>
                 <c:forEach var="report" items="${reports}" varStatus="status">
                     <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd" var="reportDay" type="date" />
                     <tr class="row${status.count % 2}">
+                        <td class="report_name"><c:out value="${report.employee.name}" /></td>
                         <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
-                        <td class="report_goal">${report.tomorrowGoal}</td>
-
+                        <td class="report_title">${report.title}</td>
+                        <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
@@ -50,20 +55,21 @@
                         <c:out value="${i}" />&nbsp;
                     </c:when>
                     <c:otherwise>
-                        <a href="<c:url value='?action=${actTop}&command=${commIdx}&page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                        <a href="<c:url value='?action=${actRep}&command=${commIdx}&page=${i}' />"><c:out value="${i}" /></a>&nbsp;
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
         </div>
 
 
-    <div class = "buttoncon">
-        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actMemo}&command=${commIdx}' />">メモ管理</a></p>
-        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成</a></p>
-        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actRep}&command=${commNew}' />">日報作成</a></p>
-        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actRep}&command=${commIdx}' />">日報管理</a></p>
-        <p id = "topbutton"><a id = "topbuttonlink" href="<c:url value='?action=${actRep}&command=${commNew}' />">週報？？</a></p>
-    </div>
 
+
+
+
+        <form method="POST" action="<c:url value='?action=${action}&command=${commCrt}' />">
+            <c:import url="_form.jsp" />
+        </form>
+
+        <p><a href="<c:url value='?action=${action}&command=${commIdx}' />">一覧に戻る</a></p>
     </c:param>
 </c:import>

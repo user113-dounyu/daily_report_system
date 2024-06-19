@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter //全てのクラスフィールドについてsetterを自動生成する(Lombok)
 @NoArgsConstructor //引数なしコンストラクタを自動生成する(Lombok)
 @AllArgsConstructor //全てのクラスフィールドを引数にもつ引数ありコンストラクタを自動生成する(Lombok)
-public class ReportView {
+public class MemoView {
 
     /**
      * id
@@ -31,7 +31,7 @@ public class ReportView {
     /**
      * いつの日報かを示す日付
      */
-    private LocalDate reportDate;
+    private LocalDate memoDate;
 
     /**
      * 日報のタイトル
@@ -44,34 +44,9 @@ public class ReportView {
     private String content;
 
     /**
-     * 日報の内容2
+     * 日報2の内容
      */
     private String content2;
-
-    /**
-     * 日報の明日の目標
-     */
-    private String tomorrowGoal;
-
-    /**
-     * 日報のOEの内容1
-     */
-    private String contentOe1;
-
-    /**
-     * 日報のOEの内容2
-     */
-    private String contentOe2;
-
-    /**
-     * OEのタグ1
-     */
-    private Integer oeFlag1;
-
-    /**
-     * OEのタグ2
-     */
-    private Integer oeFlag2;
 
     /**
      * 登録日時
@@ -82,4 +57,9 @@ public class ReportView {
      * 更新日時
      */
     private LocalDateTime updatedAt;
+
+    /**
+     * 感情のタグ（幸せ：0、悲しい：1）
+     */
+    private Integer emotionFlag;
 }

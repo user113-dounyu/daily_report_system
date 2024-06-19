@@ -24,8 +24,56 @@
                     <td><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
                 </tr>
                 <tr>
-                    <th>内容</th>
+                    <th>内容（事実）</th>
                     <td><pre><c:out value="${report.content}" /></pre></td>
+                </tr>
+                 <tr>
+                    <th>内容（気づき、学び）</th>
+                    <td><pre><c:out value="${report.content2}" /></pre></td>
+                </tr>
+                <tr>
+                    <th>明日の目標</th>
+                    <td><pre><c:out value="${report.tomorrowGoal}" /></pre></td>
+                </tr>
+                <tr>
+                    <th>OEの内容１</th>
+                    <td><pre><c:out value="${report.contentOe1}" /></pre></td>
+                </tr>
+                <tr>
+                    <th>OEの内容２</th>
+                    <td><pre><c:out value="${report.contentOe2}" /></pre></td>
+                </tr>
+                <tr>
+                    <th>OEのタグ1</th>
+                    <td><c:choose>
+                            <c:when test="${report.oeFlag1 == 0}">1</c:when>
+                            <c:when test="${report.oeFlag1 == 1}">2</c:when>
+                            <c:when test="${report.oeFlag1 == 2}">3</c:when>
+                            <c:when test="${report.oeFlag1 == 3}">4</c:when>
+                            <c:when test="${report.oeFlag1 == 4}">5</c:when>
+                            <c:when test="${report.oeFlag1 == 5}">6</c:when>
+                            <c:when test="${report.oeFlag1 == 6}">7</c:when>
+                            <c:when test="${report.oeFlag1 == 7}">8</c:when>
+
+                        </c:choose>
+
+                        </td>
+                </tr>
+                <tr>
+                    <th>OEのタグ2</th>
+                    <td><c:choose>
+                            <c:when test="${report.oeFlag2 == 0}">1</c:when>
+                            <c:when test="${report.oeFlag2 == 1}">2</c:when>
+                            <c:when test="${report.oeFlag2 == 2}">3</c:when>
+                            <c:when test="${report.oeFlag2 == 3}">4</c:when>
+                            <c:when test="${report.oeFlag2 == 4}">5</c:when>
+                            <c:when test="${report.oeFlag2 == 5}">6</c:when>
+                            <c:when test="${report.oeFlag2 == 6}">7</c:when>
+                            <c:when test="${report.oeFlag2 == 7}">8</c:when>
+
+                        </c:choose>
+
+                        </td>
                 </tr>
                 <tr>
                     <th>登録日時</th>

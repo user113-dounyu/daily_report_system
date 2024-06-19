@@ -6,19 +6,19 @@ import java.util.List; //追記
 import javax.servlet.ServletException;
 
 import actions.views.EmployeeView; //追記
-import actions.views.ReportView;
+import actions.views.MemoView;
 import constants.AttributeConst;
 import constants.ForwardConst;
 import constants.JpaConst;  //追記
-import services.ReportService;
+import services.MemoService;  //追記
 
 /**
  * トップページに関する処理を行うActionクラス
  *
  */
-public class TopAction extends ActionBase {
+public class TopAction2 extends ActionBase {
 
-    private ReportService service; //追記
+    private MemoService service; //追記
 
     /**
      * indexメソッドを実行する
@@ -26,7 +26,7 @@ public class TopAction extends ActionBase {
     @Override
     public void process() throws ServletException, IOException {
 
-        service = new ReportService(); //追記
+        service = new MemoService(); //追記
 
         //メソッドを実行
         invoke();
@@ -37,24 +37,26 @@ public class TopAction extends ActionBase {
 
     /**
      * 一覧画面を表示する
+     * @param myMemosCount
      */
     public void index() throws ServletException, IOException {
 
-     // 以下追記
+        // 以下追記
 
         //セッションからログイン中の従業員情報を取得
         EmployeeView loginEmployee = (EmployeeView) getSessionScope(AttributeConst.LOGIN_EMP);
 
         //ログイン中の従業員が作成した日報データを、指定されたページ数の一覧画面に表示する分取得する
-        int page = getPage();
-        List<ReportView> reports = service.getMinePerPage(loginEmployee, page);
+        int memopage = getPage();
+        List<MemoView> memos = service.getMinePerPage(loginEmployee, memopage);
 
         //ログイン中の従業員が作成した日報データの件数を取得
-        long myReportsCount = service.countAllMine(loginEmployee);
+//        long myMemosCount = service.countAllMine(loginEmployee);
+        long myMemosCount = 5;
 
-        putRequestScope(AttributeConst.REPORTS, reports); //取得した日報データ
-        putRequestScope(AttributeConst.REP_COUNT, myReportsCount); //ログイン中の従業員が作成した日報の数
-        putRequestScope(AttributeConst.PAGE, page); //ページ数
+        putRequestScope(AttributeConst.MEMOS, memos); //取得した日報データ
+        putRequestScope(AttributeConst.MEMO_COUNT, myMemosCount); //ログイン中の従業員が作成した日報の数
+        putRequestScope(AttributeConst.MEMOPAGE, memopage); //ページ数
         putRequestScope(AttributeConst.MAX_ROW, JpaConst.ROW_PER_PAGE); //1ページに表示するレコードの数
 
         //↑ここまで追記
@@ -67,7 +69,7 @@ public class TopAction extends ActionBase {
         }
 
         //一覧画面を表示
-        forward(ForwardConst.FW_TOP_INDEX);
+        forward(ForwardConst.FW_TOP2_INDEX);
     }
 
 }

@@ -96,14 +96,13 @@ public class AuthAction extends ActionBase {
             //ログイン画面を表示
             forward(ForwardConst.FW_LOGIN);
         }
-
-        /**
-         * ログアウト処理を行う
-         * @throws ServletException
-         * @throws IOException
-         */
     }
 
+    /**
+     * ログアウト処理を行う
+     * @throws ServletException
+     * @throws IOException
+     */
     public void logout() throws ServletException, IOException {
 
         //セッションからログイン従業員のパラメータを削除
