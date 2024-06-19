@@ -11,6 +11,18 @@ body {
     background-color: #333333;
 }
 
+#footer {
+    width: 100%;
+    /*background-color: #89c7de;*/
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+
+    position: absolute;/*←絶対位置*/
+        bottom: 0; /*下に固定*/
+}
+
 #content {
     width: 94%;
     margin-top: 15px;
@@ -25,6 +37,17 @@ h1 {
 h2 {
     font-size: 36px;
     margin-bottom: 15px;
+   /* text-align:center;*/
+}
+
+h2.login {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-align:center;
+}
+
+div.login {
+   text-align:center;
 }
 
 li {
@@ -61,14 +84,33 @@ td {
     padding: 10px 2%;
 }
 
+/*
 button {
     font-size: 14px;
     padding: 5px 10px;
 }
-
-#footer {
-    text-align: center;
+*/
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
 }
+.button:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+
 
 table#employee_list th {
     width: 30%;
@@ -140,4 +182,24 @@ pre {
 
 h3 {
     font-size: larger;
+}
+
+#flush_success {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #155724;
+    background-color: #d4edda;
+}
+
+#flush_error {
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #721c24;
+    background-color: #f8d7da;
 }
