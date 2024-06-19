@@ -18,8 +18,10 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
+        <div class="wrapper">
         <h2 class="login">ログイン</h2>
         <form method="POST" action="<c:url value='/?action=${action}&command=${command}' />">
+
             <div class="login">
                 <label for="${AttributeConst.EMP_CODE.getValue()}">社員番号</label><br />
                 <input type="text" name="${AttributeConst.EMP_CODE.getValue()}" id="${AttributeConst.EMP_CODE.getValue()}" value="${code}" />
@@ -33,5 +35,7 @@
                 <button type="submit" class= "button">ログイン</button>
             </div>
         </form>
+                   </div>
+
     </c:param>
 </c:import>

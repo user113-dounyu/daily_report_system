@@ -11,6 +11,14 @@ body {
     background-color: #333333;
 }
 
+#wrapper{
+    height: 100%;
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
 #footer {
     width: 100%;
     /*background-color: #89c7de;*/
@@ -40,15 +48,7 @@ h2 {
    /* text-align:center;*/
 }
 
-h2.login {
-    font-size: 36px;
-    margin-bottom: 15px;
-    text-align:center;
-}
 
-div.login {
-   text-align:center;
-}
 
 li {
     margin-top: 10px;
@@ -84,12 +84,29 @@ td {
     padding: 10px 2%;
 }
 
-/*
+
+/*ログインページの編集開始地点
+・ボタンのデザイン
+・入力個所のデザイン
+*/
+
+/*元あったやつ消した
 button {
     font-size: 14px;
     padding: 5px 10px;
 }
 */
+
+h2.login {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-align:center;
+}
+
+div.login {
+   text-align:center;
+}
+
 .button {
   display: inline-block;
   padding: 0.5em 1em;
@@ -110,6 +127,12 @@ button {
   border-bottom: none;
 }
 
+/*ログインページの編集終了地点*/
+
+
+input{
+    border-radius: 3px;
+}
 
 
 table#employee_list th {
