@@ -37,6 +37,9 @@
 </c:if>
 <fmt:parseDate value="${report.reportDate}" pattern="yyyy-MM-dd"
     var="reportDay" type="date" />
+<p class = "bluedainari">
+>
+</p>
 <label for="${AttributeConst.REP_DATE.getValue()}">日付</label>
 <br />
 <input type="date" name="${AttributeConst.REP_DATE.getValue()}"
@@ -45,15 +48,18 @@
 <br />
 <br />
 
+<div class = "display_none">
 <label>氏名</label>
 <br />
 <c:out value="${sessionScope.login_employee.name}" />
 <br />
 <br />
 
+</div><!-- 画面上に表示しないためのdiv-->
 
-
-
+<p class = "bluedainari">
+>
+</p>
 <label for="${AttributeConst.REP_TITLE.getValue()}">タイトル</label>
 <br />
 <input type="text" name="${AttributeConst.REP_TITLE.getValue()}"
@@ -61,91 +67,124 @@
 <br />
 <br />
 
-<label for="${AttributeConst.REP_CONTENT.getValue()}">内容（事実）</label>
+
+<div class = "CONTENT">
+<p class = "bluedainari">
+>
+</p>
+事実と気づきに分けて今日を振り返ろう
+<label for="${AttributeConst.REP_CONTENT.getValue()}"></label>
 <br />
 <textarea name="${AttributeConst.REP_CONTENT.getValue()}"
-    id="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50">${report.content}</textarea>
+    id="${AttributeConst.REP_CONTENT.getValue()}" rows="10" cols="50" placeholder="事実">${report.content}</textarea>
 <br />
 <br />
+</div>
 
-<label for="${AttributeConst.REP_CONTENT2.getValue()}">内容（気づき、学び）</label>
-<br />
+<div class = "CONTENT2">
+<label for="${AttributeConst.REP_CONTENT2.getValue()}"></label>
+<p class = "bluedainari">　</p>
 <textarea name="${AttributeConst.REP_CONTENT2.getValue()}"
-    id="${AttributeConst.REP_CONTENT2.getValue()}" rows="10" cols="50">${report.content2}</textarea>
+    id="${AttributeConst.REP_CONTENT2.getValue()}" rows="10" cols="50" placeholder="気づき">${report.content2}</textarea>
 <br />
 <br />
+</div>
 
-<label for="${AttributeConst.REP_TOMORROWGOAL.getValue()}">明日の目標</label>
-<br />
-<textarea name="${AttributeConst.REP_TOMORROWGOAL.getValue()}"
-    id="${AttributeConst.REP_TOMORROWGOAL.getValue()}" rows="10" cols="50">${report.tomorrowGoal}</textarea>
-<br />
-<br />
-
-<label for="${AttributeConst.REP_CONTENT_OE1.getValue()}">OEの内容１</label>
-<br />
-<textarea name="${AttributeConst.REP_CONTENT_OE1.getValue()}"
-    id="${AttributeConst.REP_CONTENT_OE1.getValue()}" rows="10" cols="50">${report.contentOe1}</textarea>
-<br />
-<br />
-
-<label for="${AttributeConst.REP_CONTENT_OE2.getValue()}">OEの内容２</label>
-<br />
-<textarea name="${AttributeConst.REP_CONTENT_OE2.getValue()}"
-    id="${AttributeConst.REP_CONTENT_OE2.getValue()}" rows="10" cols="50">${report.contentOe1}</textarea>
-<br />
-<br />
-
-<label for="${AttributeConst.REP_OE1_FLG.getValue()}">OE1のタグ</label>
+<div class = "OE1">
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.REP_OE1_FLG.getValue()}" >実践できたOur Eight</label>
 <br />
 <select name="${AttributeConst.REP_OE1_FLG.getValue()}"
     id="${AttributeConst.REP_OE1_FLG.getValue()}">
     <option value="${AttributeConst.OE_1.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1.目的を考え行動する</option>
     <option value="${AttributeConst.OE_2.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2.正しいことを正しく行う</option>
     <option value="${AttributeConst.OE_3.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3.臆せず大胆に挑戦する</option>
     <option value="${AttributeConst.OE_4.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4.当事者意識を持つ</option>
     <option value="${AttributeConst.OE_5.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5.相手軸を意識する</option>
     <option value="${AttributeConst.OE_6.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6.礼節をもって接する</option>
     <option value="${AttributeConst.OE_7.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7.スピードと質に拘る</option>
     <option value="${AttributeConst.OE_8.getIntegerValue()}"
-        <c:if test="${report.oeFlag1 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
+        <c:if test="${report.oeFlag1 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8.プロとして学び続ける</option>
 </select>
 <br />
 <br />
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.REP_CONTENT_OE1.getValue()}">実践できたと感じるOur Eightを振り返ろう</label>
+<br />
+<textarea name="${AttributeConst.REP_CONTENT_OE1.getValue()}"
+    id="${AttributeConst.REP_CONTENT_OE1.getValue()}" rows="10" cols="50" placeholder="どういった場面で実践できた？
+さらにできると良かったことは？">${report.contentOe1}</textarea>
+<br />
+<br />
+</div>
 
-<label for="${AttributeConst.REP_OE2_FLG.getValue()}">OE2のタグ</label>
+<div class = "OE2">
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.REP_OE2_FLG.getValue()}">実践できなかったOur Eight</label>
 <br />
 <select name="${AttributeConst.REP_OE2_FLG.getValue()}"
     id="${AttributeConst.REP_OE2_FLG.getValue()}">
     <option value="${AttributeConst.OE_1.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_1.getIntegerValue()}"> selected</c:if>>1.目的を考え行動する</option>
     <option value="${AttributeConst.OE_2.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2.正しいことを正しく行う</option>
     <option value="${AttributeConst.OE_3.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3臆せず大胆に挑戦する</option>
     <option value="${AttributeConst.OE_4.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4.当事者意識を持つ</option>
     <option value="${AttributeConst.OE_5.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_5.getIntegerValue()}"> selected</c:if>>5.相手軸を意識する</option>
     <option value="${AttributeConst.OE_6.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_6.getIntegerValue()}"> selected</c:if>>6.礼節をもって接する</option>
     <option value="${AttributeConst.OE_7.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_7.getIntegerValue()}"> selected</c:if>>7.スピードと質に拘る</option>
     <option value="${AttributeConst.OE_8.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_8.getIntegerValue()}"> selected</c:if>>8.プロとして学び続ける</option>
 </select>
 <br />
 <br />
+
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.REP_CONTENT_OE2.getValue()}">実践できなかったと感じるOur Eightを振り返ろう</label>
+<br />
+<textarea name="${AttributeConst.REP_CONTENT_OE2.getValue()}"
+    id="${AttributeConst.REP_CONTENT_OE2.getValue()}" rows="10" cols="50" placeholder="どういった場面で実践できなかった？
+どうして実践できなかった？">${report.contentOe1}</textarea>
+<br />
+<br />
+</div>
+
+
+<div class = "TOMORROWGOAL">
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.REP_TOMORROWGOAL.getValue()}">明日の目標</label>
+<br />
+<textarea name="${AttributeConst.REP_TOMORROWGOAL.getValue()}"
+    id="${AttributeConst.REP_TOMORROWGOAL.getValue()}" rows="10" cols="50" placeholder="行動に移せる目標を具体的に書こう">${report.tomorrowGoal}</textarea>
+<br />
+<br />
+</div>
+
 
 <input type="hidden" name="${AttributeConst.REP_ID.getValue()}"
     value="${report.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}"
     value="${_token}" />
-<button type="submit">投稿</button>
+<button type="submit" id = "reportSubmitButton">投稿</button>

@@ -28,10 +28,9 @@
 
             <label for="${AttributeConst.EMP_PASS.getValue()}">パスワード</label><br />
             <input type="password" name="${AttributeConst.EMP_PASS.getValue()}" id="${AttributeConst.EMP_PASS.getValue()}" />
-            <br /><br />
-
+            <br /><br /><br /><br /><br />
             <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
-            <button type="submit" class = "button">ログイン</button>
+            <button type="submit" class = "loginbutton">ログイン</button>
          </div>
         </form>
        </div>

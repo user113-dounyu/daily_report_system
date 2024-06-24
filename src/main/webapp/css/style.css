@@ -3,6 +3,7 @@
 body {
     color: #333333;
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+    font-weight:bold;
 }
 
 #header {
@@ -26,7 +27,6 @@ body {
     color: #333;
     text-align: center;
     padding: 30px 0;
-
     position: absolute;/*←絶対位置*/
         bottom: 0; /*下に固定*/
 }
@@ -35,6 +35,13 @@ body {
     width: 94%;
     margin-top: 15px;
     padding-left: 3%;
+}
+
+.bluedainari{
+    font-size: 20px;
+    font-weight: bold;
+    display:inline;
+    color :blue;
 }
 
 h1 {
@@ -83,6 +90,14 @@ td {
     padding: 10px 2%;
 }
 
+/*共通部分の編集終了地点*/
+
+
+/*ログインページの編集開始地点
+・ボタンのデザイン
+・入力個所のデザイン
+*/
+
 
 /*ログインページの編集開始地点
 ・ボタンのデザイン
@@ -93,7 +108,6 @@ td {
 button {
     font-size: 14px;
     padding: 5px 10px;
-
 */
 
 h2.login {
@@ -106,7 +120,7 @@ div.login {
    text-align:center;
 }
 
-.button {
+.loginbutton {
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -117,8 +131,9 @@ div.login {
   border-right: none;
   border-bottom: solid 4px #627295;
   border-radius: 3px;
+  font-size: 20px;
 }
-.button:active {
+.loginbutton:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
@@ -129,9 +144,10 @@ div.login {
 /*ログインページの編集終了地点*/
 
 /*toppageの編集*/
-
-
-
+.buttoncon{
+    width : 100%;
+    min-width: 100vw;
+}
 
 #topbutton {
   position:relative;
@@ -171,6 +187,111 @@ a#topbuttonlink {
 }
 
 /*toppageの編集終了*/
+
+/*メモ作成の編集*/
+.display_none{
+    display: none;
+}
+
+textarea {
+    width:30vw;
+    resize:none;
+}
+
+div.memotextarea{
+    display: inline-block;
+    font-weight: normal;
+    /*position:relative;*/
+}
+
+div.flexend{
+       clear: both;
+}
+
+#memoSubmitButton{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+#memoSubmitButton:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+/*
+div.memocontent{
+    position:absolute;
+    width:100%;
+    top: 0;
+    left: 0;
+}*/
+/*メモ作成の編集終了*/
+
+
+/*日報作成*/
+div.CONTENT{
+    float: left;
+   width: 30vw;
+   margin-right: 3vw;
+}
+
+div.CONTENT2{
+    float: left;
+   width: 30vw;
+}
+
+
+div.OE1 {
+   float: left;
+   width: 30vw;
+   margin-right: 3vw;
+
+}
+div.OE2 {
+   float: left;
+   width: 30vw;
+}
+
+div.TOMORROWGOAL {
+   clear: both;
+}
+
+
+#reportSubmitButton{
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  font-size: 20px;
+}
+
+#reportSubmitButton:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+/*日報作成編集終了*/
 
 input{
     border-radius: 3px;
@@ -247,6 +368,7 @@ pre {
 }
 
 h3 {
+    font-weight: bold;
     font-size: larger;
 }
 
