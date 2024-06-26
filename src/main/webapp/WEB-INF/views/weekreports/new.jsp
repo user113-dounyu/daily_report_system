@@ -26,7 +26,7 @@
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
-        <h2>週報　新規登録ページ</h2>
+        <h2>新規週報作成</h2>
 
 <h3>今週の日報</h3>
 

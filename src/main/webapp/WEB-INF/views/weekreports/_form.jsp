@@ -74,7 +74,7 @@
 <p class = "bluedainari">
 >
 </p>
-事実と気づきに分けて今週を振り返ろう
+事実と考えに分けて今週を振り返ろう
 <label for="${AttributeConst.WEEKREP_CONTENT.getValue()}"></label>
 <br />
 <textarea name="${AttributeConst.WEEKREP_CONTENT.getValue()}"
@@ -87,7 +87,7 @@
 <label for="${AttributeConst.WEEKREP_CONTENT2.getValue()}"></label>
 <p class = "bluedainari">　</p>
 <textarea name="${AttributeConst.WEEKREP_CONTENT2.getValue()}"
-    id="${AttributeConst.WEEKREP_CONTENT2.getValue()}" rows="10" cols="50" placeholder="気づき">${weekreport.weekcontent2}</textarea>
+    id="${AttributeConst.WEEKREP_CONTENT2.getValue()}" rows="10" cols="50" placeholder="考え">${weekreport.weekcontent2}</textarea>
 <br />
 <br />
 </div>

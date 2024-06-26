@@ -19,7 +19,7 @@
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
-        <h2>日報　新規登録ページ</h2>
+        <h2>新規日報作成</h2>
 
 
 <h3>【自分のメモ一覧】</h3>

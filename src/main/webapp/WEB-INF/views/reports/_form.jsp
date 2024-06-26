@@ -72,7 +72,7 @@
 <p class = "bluedainari">
 >
 </p>
-事実と気づきに分けて今日を振り返ろう
+事実と考えに分けて今日を振り返ろう
 <label for="${AttributeConst.REP_CONTENT.getValue()}"></label>
 <br />
 <textarea name="${AttributeConst.REP_CONTENT.getValue()}"
@@ -85,7 +85,7 @@
 <label for="${AttributeConst.REP_CONTENT2.getValue()}"></label>
 <p class = "bluedainari">　</p>
 <textarea name="${AttributeConst.REP_CONTENT2.getValue()}"
-    id="${AttributeConst.REP_CONTENT2.getValue()}" rows="10" cols="50" placeholder="気づき">${report.content2}</textarea>
+    id="${AttributeConst.REP_CONTENT2.getValue()}" rows="10" cols="50" placeholder="考え">${report.content2}</textarea>
 <br />
 <br />
 </div>

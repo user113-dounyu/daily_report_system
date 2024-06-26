@@ -58,7 +58,12 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='?action=${actWeekRep}&command=${commNew}' />">新規週報の登録</a></p>
+        <!--<p><a href="<c:url value='?action=${actWeekRep}&command=${commNew}' />">新規週報の登録</a></p> -->
+
+        <p id="Repbutton">
+            <a id="Repbuttonlink"
+                href="<c:url value='?action=${actWeekRep}&command=${commNew}' />">週報作成</a>
+        </p>
 
     </c:param>
 </c:import>
