@@ -142,7 +142,7 @@
     <option value="${AttributeConst.OE_2.getIntegerValue()}"
         <c:if test="${report.oeFlag2 == AttributeConst.OE_2.getIntegerValue()}"> selected</c:if>>2.正しいことを正しく行う</option>
     <option value="${AttributeConst.OE_3.getIntegerValue()}"
-        <c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3臆せず大胆に挑戦する</option>
+        <c:if test="${report.oeFlag2 == AttributeConst.OE_3.getIntegerValue()}"> selected</c:if>>3.臆せず大胆に挑戦する</option>
     <option value="${AttributeConst.OE_4.getIntegerValue()}"
         <c:if test="${report.oeFlag2 == AttributeConst.OE_4.getIntegerValue()}"> selected</c:if>>4.当事者意識を持つ</option>
     <option value="${AttributeConst.OE_5.getIntegerValue()}"

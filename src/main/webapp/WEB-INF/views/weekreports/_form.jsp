@@ -37,7 +37,12 @@
 </c:if>
 <fmt:parseDate value="${weekreport.weekreportDate}" pattern="yyyy-MM-dd"
     var="weekreportDay" type="date" />
-<label for="${AttributeConst.WEEKREP_DATE.getValue()}">日付</label>
+
+
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.REP_DATE.getValue()}">日付</label>
 <br />
 <input type="date" name="${AttributeConst.WEEKREP_DATE.getValue()}"
     id="${AttributeConst.WEEKREP_DATE.getValue()}"
@@ -45,15 +50,18 @@
 <br />
 <br />
 
+<div class = "display_none">
 <label>氏名</label>
 <br />
 <c:out value="${sessionScope.login_employee.name}" />
 <br />
 <br />
 
+</div><!-- 画面上に表示しないためのdiv-->
 
-
-
+<p class = "bluedainari">
+>
+</p>
 <label for="${AttributeConst.WEEKREP_TITLE.getValue()}">タイトル</label>
 <br />
 <input type="text" name="${AttributeConst.WEEKREP_TITLE.getValue()}"
@@ -61,35 +69,34 @@
 <br />
 <br />
 
-<label for="${AttributeConst.WEEKREP_CONTENT.getValue()}">内容（事実）</label>
+
+<div class = "CONTENT">
+<p class = "bluedainari">
+>
+</p>
+事実と気づきに分けて今週を振り返ろう
+<label for="${AttributeConst.WEEKREP_CONTENT.getValue()}"></label>
 <br />
 <textarea name="${AttributeConst.WEEKREP_CONTENT.getValue()}"
-    id="${AttributeConst.WEEKREP_CONTENT.getValue()}" rows="10" cols="50">${weekreport.weekcontent}</textarea>
+    id="${AttributeConst.WEEKREP_CONTENT.getValue()}" rows="10" cols="50" placeholder="事実">${weekreport.weekcontent}</textarea>
 <br />
 <br />
+</div>
 
-<label for="${AttributeConst.WEEKREP_CONTENT2.getValue()}">内容（気づき、学び）</label>
-<br />
+<div class = "CONTENT2">
+<label for="${AttributeConst.WEEKREP_CONTENT2.getValue()}"></label>
+<p class = "bluedainari">　</p>
 <textarea name="${AttributeConst.WEEKREP_CONTENT2.getValue()}"
-    id="${AttributeConst.WEEKREP_CONTENT2.getValue()}" rows="10" cols="50">${weekreport.weekcontent2}</textarea>
+    id="${AttributeConst.WEEKREP_CONTENT2.getValue()}" rows="10" cols="50" placeholder="気づき">${weekreport.weekcontent2}</textarea>
 <br />
 <br />
+</div>
 
-<label for="${AttributeConst.WEEKREP_TOMORROWGOAL.getValue()}">明日の目標</label>
-<br />
-<textarea name="${AttributeConst.WEEKREP_TOMORROWGOAL.getValue()}"
-    id="${AttributeConst.WEEKREP_TOMORROWGOAL.getValue()}" rows="10" cols="50">${weekreport.weektomorrowGoal}</textarea>
-<br />
-<br />
-
-<label for="${AttributeConst.WEEKREP_CONTENT_OE1.getValue()}">OEの内容１</label>
-<br />
-<textarea name="${AttributeConst.WEEKREP_CONTENT_OE1.getValue()}"
-    id="${AttributeConst.WEEKREP_CONTENT_OE1.getValue()}" rows="10" cols="50">${weekreport.weekcontentOe1}</textarea>
-<br />
-<br />
-
-<label for="${AttributeConst.WEEKREP_OE1_FLG.getValue()}">OE1のタグ</label>
+<div class = "OE1">
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.WEEKREP_OE1_FLG.getValue()}">実践できたOur Eight</label>
 <br />
 <select name="${AttributeConst.WEEKREP_OE1_FLG.getValue()}"
     id="${AttributeConst.WEEKREP_OE1_FLG.getValue()}">
@@ -112,15 +119,23 @@
 </select>
 <br />
 <br />
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.WEEKREP_CONTENT_OE1.getValue()}">実践できたと感じるOur Eightを振り返ろう</label>
+<br />
+<textarea name="${AttributeConst.WEEKREP_CONTENT_OE1.getValue()}"
+    id="${AttributeConst.WEEKREP_CONTENT_OE1.getValue()}" rows="10" cols="50" placeholder="どういった場面で実践できた？
+さらにできると良かったことは？">${weekreport.weekcontentOe1}</textarea>
+<br />
+<br />
+</div>
 
-<label for="${AttributeConst.WEEKREP_CONTENT_OE2.getValue()}">OEの内容２</label>
-<br />
-<textarea name="${AttributeConst.WEEKREP_CONTENT_OE2.getValue()}"
-    id="${AttributeConst.WEEKREP_CONTENT_OE2.getValue()}" rows="10" cols="50">${weekreport.weekcontentOe1}</textarea>
-<br />
-
-<br />
-<label for="${AttributeConst.WEEKREP_OE2_FLG.getValue()}">OE2のタグ</label>
+<div class = "OE2">
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.WEEKREP_OE2_FLG.getValue()}">実践できなかったOur Eight</label>
 <br />
 <select name="${AttributeConst.WEEKREP_OE2_FLG.getValue()}"
     id="${AttributeConst.WEEKREP_OE2_FLG.getValue()}">
@@ -143,9 +158,32 @@
 </select>
 <br />
 <br />
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.WEEKREP_CONTENT_OE2.getValue()}">実践できなかったOur Eightを振り返ろう</label>
+<br />
+<textarea name="${AttributeConst.WEEKREP_CONTENT_OE2.getValue()}"
+    id="${AttributeConst.WEEKREP_CONTENT_OE2.getValue()}" rows="10" cols="50" placeholder="どういった場面で実践できなかった？
+どうして実践できなかった？">${weekreport.weekcontentOe1}</textarea>
+<br />
+<br />
+</div>
+
+<div class = "TOMORROWGOAL">
+<p class = "bluedainari">
+>
+</p>
+<label for="${AttributeConst.WEEKREP_TOMORROWGOAL.getValue()}">来週の目標</label>
+<br />
+<textarea name="${AttributeConst.WEEKREP_TOMORROWGOAL.getValue()}"
+    id="${AttributeConst.WEEKREP_TOMORROWGOAL.getValue()}" rows="10" cols="50"  placeholder="行動に移せる目標を具体的に書こう">${weekreport.weektomorrowGoal}</textarea>
+<br />
+<br />
+</div>
 
 <input type="hidden" name="${AttributeConst.WEEKREP_ID.getValue()}"
     value="${weekreport.id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}"
     value="${_token}" />
-<button type="submit">投稿</button>
+<button type="submit" id = "reportSubmitButton">投稿</button>
