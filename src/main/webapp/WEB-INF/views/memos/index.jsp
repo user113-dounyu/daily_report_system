@@ -19,7 +19,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>メモ　一覧</h2>
+        <h2>メモ一覧</h2>
         <table id="memo_list">
             <tbody>
                 <tr>
@@ -34,7 +34,7 @@
 
                     <tr class="row${status.count % 2}">
 
-                         <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
+                        <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
                         <td class="memo_title">${memo.title}</td>
                         <td><c:choose>
                             <c:when test="${memo.emotionFlag == 0}">喜び</c:when>
@@ -67,7 +67,17 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='?action=${actMemo}&command=${commNew}' />">新規メモの登録</a></p>
+
+
+<!--        <p><a href="<c:url value='?action=${actMemo}&command=${commNew}' />">新規メモの登録</a></p> -->
+
+
+            <p id="memobutton">
+                <a id="memobuttonlink"
+                    href="<c:url value='?action=${actMemo}&command=${commNew}' />">メモ作成</a>
+            </p>
+
+
 
     </c:param>
 </c:import>

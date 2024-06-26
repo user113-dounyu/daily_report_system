@@ -26,16 +26,18 @@
         <table id="memo_list">
             <tbody>
                 <tr>
+
                     <th class="memo_date">日付</th>
                     <th class="memo_title">タイトル</th>
                     <th class="memo_content">内容（事実）</th>
                     <th class="memo_content2">内容（気づき、感情）</th>
                     <th class="memo_emotionFlag">感情のタグ</th>
+
                 </tr>
                 <c:forEach var="memo" items="${memos}" varStatus="status">
                     <fmt:parseDate value="${memo.memoDate}" pattern="yyyy-MM-dd" var="memoDay" type="date" />
                     <tr class="row${status.count % 2}">
-                    <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
+                        <td class="memo_date"><fmt:formatDate value='${memoDay}' pattern='yyyy-MM-dd' /></td>
                         <td class="memo_title">${memo.title}</td>
                         <td class="memo_content">${memo.content}</td>
                         <td class="memo_content2">${memo.content2}</td>

@@ -7,6 +7,7 @@
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commShow" value="${ForwardConst.CMD_SHOW.getValue()}" />
 <c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
+<c:set var="commMyIdx" value="${ForwardConst.CMD_MYINDEX.getValue()}" />
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
@@ -15,7 +16,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>みんなの日報</h2>
+        <h2>日報　一覧</h2>
         <table id="report_list">
             <tbody>
                 <tr>
@@ -45,20 +46,12 @@
                         <c:out value="${i}" />&nbsp;
                     </c:when>
                     <c:otherwise>
-                        <a href="<c:url value='?action=${actRep}&command=${commIdx}&page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                        <a href="<c:url value='?action=${actRep}&command=${commMyIdx}&page=${i}' />"><c:out value="${i}" /></a>&nbsp;
                     </c:otherwise>
                 </c:choose>
             </c:forEach>
         </div>
-
-
-<!--   <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p> -->
-
-
-            <p id="Repbutton">
-                <a id="Repbuttonlink"
-                    href="<c:url value='?action=${actRep}&command=${commNew}' />">日報作成</a>
-            </p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commNew}' />">新規日報の登録</a></p>
 
     </c:param>
 </c:import>
